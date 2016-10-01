@@ -239,6 +239,11 @@ header{
     margin-top: 40px;
     transition: all 0.3s ease;
 }
+.ouslinks {
+	color: black;
+}
+
+
 .service-wrap:hover i {
     color: #e66f69;
 }
