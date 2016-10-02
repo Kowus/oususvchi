@@ -88,6 +88,10 @@ a:hover,a:active,a:focus{
     left: 0.5em;
     margin-right: -42%;
 }
+.form-control:hover {
+    background: #fff;
+    color: #000;
+}
 
 
 /* ///////////////////////////////////////////////////////////////////// 
@@ -574,6 +578,12 @@ footer {
 }
 .designed a:hover {
     color: #e66f69;
+}
+.ousfooter{
+	opacity: 0.8;
+}
+.ousfooter:hover{
+	opacity: 1;
 }
 
 
