@@ -261,7 +261,9 @@ header{
 .pe-dj {
     font-size: 5em;
 }
-
+.ouslinks:visited {
+	color: black;
+}
 
 /* ///////////////////////////////////////////////////////////////////// 
 //  05 - Portfolio
