@@ -45,7 +45,7 @@
 
 
         if($formok){
-            $headers = $email . "\r\n";
+            $headers = "From: {$email}" . "\r\n";
             $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
             
             $emailbody = "<p>You have recieved a new message from the enquiries form on your website.</p>
