@@ -258,15 +258,15 @@
                         </div>
                         <div class="col-sm-6">
                             <h2 class="con-title">Let your voice be heard</h2>
-                            <form role="form">
+                            <form role="form" action="assets/php/contact.php" method="POST">
                               <div class="form-group">
-                                <input type="text" class="form-control" id="user_name" placeholder="Enter your name">
+                                <input type="text" name="name" class="form-control" id="user_name" required placeholder="Enter your name">
                               </div>
                               <div class="form-group">
-                                <input type="email" class="form-control" id="your_email" placeholder="Enter your email">
+                                <input type="email" name="email" class="form-control" id="your_email" placeholder="Enter your email">
                               </div>
                               <div class="form-group">
-                                <textarea name="InputMessage" id="user_message" class="form-control" rows="5" required placeholder="Let this space be your scratchpad, let your voice be heard, share opinions, suggestions, how can I be better, want to book me for an event? I do appreciate your taking the time to visit my page. Your feedback really means a lot to me! " ></textarea>
+                                <textarea name="message" id="user_message" class="form-control" rows="5" required placeholder="Let this space be your scratchpad, let your voice be heard, share opinions, suggestions, how can I be better, want to book me for an event? I do appreciate your taking the time to visit my page. Your feedback really means a lot to me! " ></textarea>
                               </div>
 
                               <button type="submit" class="btn medium">Hit me up</button>
