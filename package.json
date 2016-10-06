@@ -1,0 +1,30 @@
+{
+  "name": "ousu-svchi",
+  "version": "1.0.0",
+  "description": "oususvchi's server side validation",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kowus/oususvchi.git"
+  },
+  "keywords": [
+    "ousu",
+    "svchi",
+    "kowus",
+    "joshua sakyi",
+    "barnabas"
+  ],
+  "author": "Barnabas Nomo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kowus/oususvchi/issues"
+  },
+  "homepage": "https://github.com/Kowus/oususvchi#readme"
+}
