@@ -5,7 +5,7 @@ var nodemailer = require('nodemailer');
 
 var API_KEY = '1bf1a4c3a29abbb2f3d9c8c0ce6b872f5e65dabd1f2541c6ab9c8f995a1d';
 
-var quickemailverification = require('quickemailverification').client('Your_API_Key_Here').quickemailverification();
+var quickemailverification = require('quickemailverification').client('API_KEY').quickemailverification();
 
 
 var app = express();
