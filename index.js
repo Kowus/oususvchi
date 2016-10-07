@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
 var nodemailer = require('nodemailer');
-
+// var verifier = require('email-verify');
 
 
 var app = express();
@@ -20,9 +20,6 @@ app.use('/', express.static(__dirname + '/'));
 
 
 
-function handleRender(req, res) {
-    
-}
 
 
 
@@ -35,10 +32,10 @@ app.post('/myapi', function(req, res){
             pass: 'JoshAkyi16'
         }
     });
-    
     var mailOptions = {
         from: req.body.name + "" + "<"+req.body.my_email+">", // sender address
-        to: 'barnabas@elite-education.org, sodramatic@live.com, oususvchi@gmail.com', // list of receivers
+        reply: req.body.my_email,
+        to: 'oususvchi@gmail.com', // list of receivers
         subject: 'New email from ' + req.body.name + "" + "<"+req.body.my_email+">", // Subject line
         text: '\n' + req.body.message, // plaintext body
         //html: '<b>Hello world ?</b>' // html body
