@@ -2,7 +2,10 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
 var nodemailer = require('nodemailer');
-// var verifier = require('email-verify');
+
+var API_KEY = '1bf1a4c3a29abbb2f3d9c8c0ce6b872f5e65dabd1f2541c6ab9c8f995a1d';
+
+var quickemailverification = require('quickemailverification').client('Your_API_Key_Here').quickemailverification();
 
 
 var app = express();
@@ -40,6 +43,11 @@ app.post('/myapi', function(req, res){
         text: '\n' + req.body.message, // plaintext body
         //html: '<b>Hello world ?</b>' // html body
     };
+
+    quickemailverification.verify(req.body.my_email, function (err, response) {
+        // Print response object
+        console.log(response.body);
+    });
 
     transporter.sendMail(mailOptions, function(error, info){
         if(error){
