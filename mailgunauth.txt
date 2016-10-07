@@ -1,6 +1,0 @@
-curl -s --user 'api:key-4876fd60bea6da809a90de5b4b70d0f7' \
-    https://api.mailgun.net/v3/sandbox1218837047e94fc4859105c50046700e.mailgun.org/messages \
-    -F from='Mailgun Sandbox <postmaster@sandbox1218837047e94fc4859105c50046700e.mailgun.org>' \
-    -F to='Ousu Svchi <oususvchi@gmail.com>' \
-    -F subject='Hello Ousu Svchi' \
-    -F text='Congratulations Ousu Svchi, you just sent an email with Mailgun!  You are truly awesome!' 
