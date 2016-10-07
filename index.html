@@ -86,10 +86,10 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="services">
                             <div class="service-wrap">   
-                                <a href="ssaver.html" target="_blank" class="ouslinks">
                                 <i class="pe-7s-phone pe-dj pe-va"></i>
-                                <h3>Screensavers</h3>
-                                <p>Give your phone's homescreen a cool feel! Use pictures from my weekly series as Wallpapers.</p>
+                                <a href="ssaver.html" target="_blank" class="ouslinks">
+                                    <h3>Screensavers</h3>
+                                    <p>Give your phone's homescreen a cool feel! Use pictures from my weekly series as Wallpapers.</p>
                                 </a>
                             </div>
                         </div>
@@ -249,7 +249,13 @@
                         <div class="col-sm-6">
                             <div class="moreDetails">
                                 <h2 class="con-title">More About me</h2>
-                                <p> All the nice things about Joshua fit this container. Joshua Toaso </p>
+                                <p> 
+                                    All the nice things about Joshua fit this container. 
+                                    Joshua Toaso like JM, but JS is short for javascript 
+                                    and I've been reviewing scripts since cinematography 
+                                    started.. all in all I'm tryin to say I'm very old 
+                                    and very economic with the truth. 
+                                </p>
                                 <ul class="address">
                                     <!--<li><i class="pe-7s-map-marker"></i><span>1600 Pennsylvania Ave NW,<br>Washington, DC 20500,<br>United States</span></li>-->
                                     <li><i class="pe-7s-mail"></i><span>oususvchi@gmail.com</span></li>
@@ -260,16 +266,16 @@
                         </div>
                         <div class="col-sm-6">
                             <h2 class="con-title">Let your voice be heard</h2>
-                            <form role="form" action="assets/php/contact.php" method="POST">
+                            <form role="form" action="myapi" method="POST">
                               <div class="form-group">
-                                <input type="text" name="name" class="form-control" id="user_name" required placeholder="Enter your name">
+                                <input type="text" name="name" class="form-control" required placeholder="Enter your name">
                               </div>
                               <div class="form-group">
-                                <input type="email" name="email" class="form-control" id="your_email" placeholder="Enter your email">
+                                <input type="email" name="my_email" class="form-control" placeholder="Enter your email">
                                 <a name="contact"></a>
                               </div>
                               <div class="form-group">
-                                <textarea name="message" id="user_message" class="form-control" rows="5" required placeholder="Let this space be your scratchpad, let your voice be heard, share opinions, suggestions, how can I be better, want to book me for an event? I do appreciate your taking the time to visit my page. Your feedback really means a lot to me! " ></textarea>
+                                <textarea name="message" class="form-control" rows="5" required placeholder="Let this space be your scratchpad, let your voice be heard, share opinions, suggestions, how can I be better, want to book me for an event? I do appreciate your taking the time to visit my page. Your feedback really means a lot to me! " ></textarea>
                               </div>
 
                               <button type="submit" class="btn medium">Hit me up</button>
@@ -305,13 +311,13 @@
                         <p class="copyright">© Copyright 2016 <a href="#" target="_blank">W O E P</a></p>
                     </div>
                     <div class="col-sm-6"><i class=""></i>
-                        <p class="designed ousfooter">Ousu Svchi: <a href="#">Life In A Pixel</a></p>
+                        <p class="designed ousfooter">Ousu Svchi: <a href="#" id="kowus">Life In A Pixel</a></p>
                     </div>
                 </div>
             </div>
         </footer>
 
-        <!-- Necessery scripts -->
+        <!-- Necessary scripts -->
         <script src="assets/js/jquery-2.1.3.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
@@ -322,6 +328,18 @@
         <script src="assets/js/smooth-scroll.js"></script>
         <script src="assets/js/owl.carousel.js"></script>
         <script src="assets/js/script.js"></script>
+        <!--
+        <script type="text/javascript">
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "myapi", true);
+            xhttp.onreadystatechange = function(){
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("kowus").innerHTML = this.responseText;
+                }
+            };
+
+            xhttp.send();
+        </script-->
 
     </body>
 </html>

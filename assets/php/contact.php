@@ -5,7 +5,7 @@
         $formok = true;         // Boolean value for validation
         $errors = array();      // Array to store error messages
         
-        $to = 'barnabas@elite-education.org';
+        $to = 'oususvchi@gmail.com';
 
         //sumbission data
         $ipaddress = $_SERVER['REMOTE_ADDR'];   // I.P to act as first spam filter
@@ -43,7 +43,7 @@
 
 
         if($formok){
-            $headers = "From: $email" . "\r\n" . 'Reply-To: $email' . "\r\n";
+            $headers = "From: $email" . "\r\n" . 'Reply-To: {$email}' . "\r\n";
             $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
             
             $emailbody = "<p>You have recieved a new message from the enquiries form on your website.</p>
@@ -54,5 +54,32 @@
             
             mail($to,"New Enquiry",$emailbody,$headers);       
         }
+
+
+
+        $returndata = array(
+            'posted_form_data' => array(
+                'name' => $name,
+                'email' => $email,
+                'message' => $message
+            ),
+            'form_ok' => $formok,
+            'errors' => $errors
+        );
+
+
+        //if this is not an ajax request
+        if(empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) !== 'xmlhttprequest'){
+            
+            //set session variables
+            session_start();
+            $_SESSION['cf_returndata'] = $returndata;
+            
+            //redirect back to form
+            header('location: ' . $_SERVER['HTTP_REFERER']);
+        
+        }
+
+
     }
 ?>
