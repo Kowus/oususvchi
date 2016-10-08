@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({     // To support URL-encoded bodies
 }));
 
 var resultHolder = "";
-var reasonHolder = "";
+
 
 app.use('/', express.static(__dirname + '/'));
 
@@ -31,6 +31,7 @@ app.use('/', express.static(__dirname + '/'));
 
 app.post('/myapi', function(req, res){
 
+    resultHolder = req.body.my_email;
     var transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
@@ -49,31 +50,33 @@ app.post('/myapi', function(req, res){
     quickemailverification.verify(req.body.my_email, function (err, response) {
         // Print response object
         console.log(response.body.result);
-        console.log(response.body.reason);
-        resultHolder = response.body.result;
-        reasonHolder = response.body.reason;
-    });
-   // if(resultHolder == 'valid'){
+        
+        
+    
+   if(response.body.result == 'valid'){
         transporter.sendMail(mailOptions, function(error, info){
             if(error){
                 console.log(error);
-                res.json({yo: 'error'});
+                //res.json({yo: 'error'});
             }else{
                 console.log('Message sent: ' + info.response);
-                console.log("\nName is " +req.body.name);
-                console.log("Email is " + req.body.my_email);
-                console.log("Message is " + req.body.message);
-                res.json({yo: info.response});
+                console.log(response.body);
+               
+                
+                //res.json({yo: info.response});
 
             };
         });
-   /* }else{
-        console.log('invalid email address' + reasonHolder);
-        // document.getElementById("kowus").innerHTML = "New text!";
+   }else if(response.body.result == 'invalid' || response.body.reason == 'invalid_domain'){
+        console.log('invalid email address: ' + req.body.my_email);
+        console.log(response.body.reason);
+        app.get('/myapi2', function(req, res){
+            res.send('invalid email address: ' + resultHolder);
+        });
         
-    }*/
+    }
 
-    
+    });
 });
 
 
@@ -82,6 +85,8 @@ app.post('/myapi', function(req, res){
 var port = 3423;
 app.listen(port, function(){
     console.log("listening on localhost:"+port+'\n');
+   
+    
 });
 
 

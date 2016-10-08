@@ -99,7 +99,7 @@ a:hover,a:active,a:focus{
 /////////////////////////////////////////////////////////////////////*/
 
 header{
-	background: url(../images/bg.jpg) no-repeat;
+	background: url(../images/birds.jpg) no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: 50% -50px;
@@ -432,7 +432,7 @@ header{
 /////////////////////////////////////////////////////////////////////*/
 
 #testimonial {
-    background: url(../images/parallax.jpg);
+    background: url(../images/sunset.JPG);
     padding: 80px 0px 80px 0px;
     color: #fff;
     background-attachment: fixed;
@@ -455,11 +455,16 @@ header{
     margin-bottom: 20px;
     font-style: italic;
     font-size: 18px;
+	color: rgba(0, 0, 0, 0.75);
 }
 .testimonila-block strong {
     font-size: 2em;
+	color: rgba(0, 0, 0, 0.75);
 }
 
+.testimonila-block small {
+	color: rgba(0, 0, 0, 0.75);
+}
 
 /* ///////////////////////////////////////////////////////////////////// 
 //  07 - Contact
@@ -529,6 +534,12 @@ header{
 }
 .form-group input,.form-group textarea {
     color: #FFF;
+}
+
+#kowus {
+	font-size: 1.5em;
+	color: orangered;
+	font-weight:  bold;
 }
 
 /*Social media links*/
@@ -675,7 +686,7 @@ footer {
 @media all and (max-width: 991px) {
 
 	header{
-		background: url(../images/bg-small.jpg) no-repeat !important;
+		background: url(../images/bg-small.JPG) no-repeat !important;
 	}
 }
 
@@ -736,6 +747,8 @@ footer {
 	}
 	.testimonila-block p {
 	    max-width: 90%;
+		color: rgba(0, 0, 0, 0.7);
+
 	}
 	.social-icons a {
 	    width: 30px;
