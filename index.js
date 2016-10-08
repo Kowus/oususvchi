@@ -10,7 +10,7 @@ var quickemailverification = require('quickemailverification').client(API_Key).q
 
 
 var app = express();
-var app2 = express();
+// var app2 = express();
 
 app.use(bodyParser.json());         // To support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // To support URL-encoded bodies
@@ -40,10 +40,9 @@ app.post('/myapi', function(req, res){
     });
     var mailOptions = {
         from: req.body.name + "" + "<"+req.body.my_email+">", // sender address
-        reply: req.body.my_email,
         to: 'oususvchi@gmail.com', // list of receivers
         subject: 'New email from ' + req.body.name + "" + "<"+req.body.my_email+">", // Subject line
-        text: '\n' + req.body.message, // plaintext body
+        text: '\n' + req.body.message + '\n\nReply to: ' + req.body.my_email, // plaintext body
         //html: '<b>Hello world ?</b>' // html body
     };
 
@@ -54,7 +53,7 @@ app.post('/myapi', function(req, res){
         resultHolder = response.body.result;
         reasonHolder = response.body.reason;
     });
-    if(resultHolder == 'valid'){
+   // if(resultHolder == 'valid'){
         transporter.sendMail(mailOptions, function(error, info){
             if(error){
                 console.log(error);
@@ -68,11 +67,11 @@ app.post('/myapi', function(req, res){
 
             };
         });
-    }else{
+   /* }else{
         console.log('invalid email address' + reasonHolder);
-        document.getElementById("kowus").innerHTML = "New text!";
+        // document.getElementById("kowus").innerHTML = "New text!";
         
-    }
+    }*/
 
     
 });
