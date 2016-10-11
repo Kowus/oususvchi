@@ -1,263 +1,129 @@
 <!Doctype html>
-<html>
-    <head>
-        <title>::Screensavers</title>
-        <link rel="icon" href="assets/images/ous.jpg">
+<html ng-app="App">
 
-        <!-- meta -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-       <!-- <meta http-equiv="refresh" content="5">-->
-        <meta name="description" content="Screensaver, screen saver">
-        <meta name="keywords" content="Ousu,Svchi,Ousu Svchi,screensaver,photography,events,mentoring, Life In A Pixel">
-        <meta name="author" content="Barnabas Nomo,Kowus,WOEP">
-        <!-- stylesheets -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/font_icon/css/pe-icon-7-stroke.css">
-        <link rel="stylesheet" href="assets/font_icon/css/helper.css">
-        <link rel="stylesheet" href="assets/css/owl.carousel.css">
-        <link rel="stylesheet" href="assets/css/owl.theme.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+<head>
+    <title>::Screensavers</title>
+    <link rel="icon" href="assets/images/ous.jpg">
 
-        <!-- google fonts 
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="refresh" content="5">-->
+    <meta name="description" content="Screensaver, screen saver">
+    <meta name="keywords" content="Ousu,Svchi,Ousu Svchi,screensaver,photography,events,mentoring, Life In A Pixel">
+    <meta name="author" content="Barnabas Nomo,Kowus,WOEP">
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font_icon/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="assets/font_icon/css/helper.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--angular fire-->
+
+
+
+  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
+
+
+
+      <script>
+
+            //configuring
+            var config = {
+                apiKey: "AIzaSyDteNE0JKZ0ei8YckaIXHIuK-s3FpdYkvU",
+                authDomain: "dc-weatherapp.firebaseapp.com",
+                databaseURL: "https://dc-weatherapp.firebaseio.com",
+                storageBucket: "gs://dc-weatherapp.appspot.com",
+                messagingSenderId: "297106554955"
+
+            };
+
+            var app = firebase.initializeApp(config);
+
+
+    </script>
+
+        <script src="App.js"></script>
+
+    <!-- google fonts 
         <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900,300italic,400italic,700italic,900italic|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
 -->
-        <script src="assets/js/modernizr.js"></script>
-    </head>
-    <body id="body">
-        <!--[if lt IE 7]>
+    <script src="assets/js/modernizr.js"></script>
+</head>
+
+<body id="body">
+
+    <!--[if lt IE 7]>
                 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
 
-
-
-        <section id="portfolio" class="portfolio-area">
-            <div class="container">
-                <h2 class="block_title">Screen Savers</h2>
-                <div class="row port cs-style-3">
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre6.jpg" alt="img04">
-                            <figcaption>
-                                <h3>Settings</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="assets/images/ousumbre6.jpg" class="button" download>Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre5.jpg" alt="img01">
-                            <figcaption>
-                                <h3>Camera</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="assets/images/ousumbre5.jpg" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre6.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre5.jpg" alt="img04">
-                            <figcaption>
-                                <h3>Settings</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre6.jpg" alt="img01">
-                            <figcaption>
-                                <h3>Camera</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption> 
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre5.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-8 col-sm-6 col-xs-12 item-space bankd"></div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre6.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre5.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre6.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre5.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre6.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre5.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre6.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre5.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre6.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre5.jpg" alt="img01">
-                            <figcaption>
-                                <h3>Camera</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre6.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/ousumbre5.jpg" alt="img01">
-                            <figcaption>
-                                <h3>Camera</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" download >Download</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-xs-12">
-                        <div class="btn-center">
-                            <a href="#" class="small button" style="margin-right: 10px;"><i class="pe-7s-angle-left-circle pe-va"></i></a>
-                            <a href="#" class="small button" style="margin-right: 10px;">View All</a>
-                            <a href="#" class="small button" style="margin-right: 10px;"><i class="pe-7s-angle-right-circle pe-va"></i></a>
-                        </div>
-                    </div>
+    <section id="portfolio" class="portfolio-area">
+        <div class="container">
+            <h2 class="block_title">Screen Savers</h2>
+            <div class="row port cs-style-3" ng-controller="LoadImagesCtrl">
+                <div ng-repeat="pic in pics" class="col-md-4 col-sm-6 col-xs-12 item-space">
+                    <figure>
+                        <img src="{{pic.img}}" alt="img04">
+                        <figcaption>
+                            <h3 style="font-size: 1em; font-weight: bold;">{{pic.title}}</h3>
+                            <span>{{pic.by}}</span>
+                            <a href="{{pic.img}}" class="button" download>Download</a>
+                        </figcaption>
+                    </figure>
                 </div>
-            </div><!-- container -->
-        </section><!-- portfolio -->
 
-
-          <!-- Footer Area -->
-
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <p class="copyright">© Copyright 2016 <a href="#" target="_blank">W O E P</a></p>
-                    </div>
-                    <div class="col-sm-6"><i class=""></i>
-                        <p class="designed ousfooter">Ousu Svchi: <a href="#">Life In A Pixel</a></p>
+                <div class="col-xs-12">
+                    <div class="btn-center">
+                        <a href="#" class="small button" style="margin-right: 10px;"><i class="pe-7s-angle-left-circle pe-va"></i></a>
+                        <a href="#" class="small button" style="margin-right: 10px;">View all</a>
+                        <a href="#" class="small button" style="margin-right: 10px;"><i class="pe-7s-angle-right-circle pe-va"></i></a>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+        <!-- container -->
+    </section>
+    <!-- portfolio -->
 
 
-        <!-- Necessary scripts -->
-        <script src="assets/js/jquery-2.1.3.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-       <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <!-- Footer Area -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p class="copyright">© Copyright 2016 <a href="#" target="_blank">W O E P</a></p>
+                </div>
+                <div class="col-sm-6"><i class=""></i>
+                    <p class="designed ousfooter">Ousu Svchi: <a href="#">Life In A Pixel</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Necessery scripts -->
+    <script src="assets/js/jquery-2.1.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA37XumsVrTdjCg_bQys8uynfMfEKe5OKc&callback=initMap" type="text/javascript"></script>-->
 
-        <script src="assets/js/jquery.actual.min.js"></script>
-        <script src="assets/js/smooth-scroll.js"></script>
-        <script src="assets/js/owl.carousel.js"></script>
-        <script src="assets/js/script.js"></script>
+    <script src="assets/js/jquery.actual.min.js"></script>
+    <script src="assets/js/smooth-scroll.js"></script>
+    <script src="assets/js/owl.carousel.js"></script>
+    <script src="assets/js/script.js"></script>
 
-    </body>
+</body>
+
 </html>
