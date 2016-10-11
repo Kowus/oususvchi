@@ -10,7 +10,7 @@ var quickemailverification = require('quickemailverification').client(API_Key).q
 
 
 var app = express();
-// var app2 = express();
+
 
 app.use(bodyParser.json());         // To support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // To support URL-encoded bodies
