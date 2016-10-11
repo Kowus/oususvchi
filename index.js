@@ -2,7 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
 var nodemailer = require('nodemailer');
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+//var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
 
 var API_Key = '1bf1a4c3a29abbb2f3d9c8c0ce6b872f5e65dabd1f2541c6ab9c8f995a1d';
 
@@ -70,14 +71,7 @@ app.post('/myapi', function(req, res){
    }else if(response.body.result == 'invalid' || response.body.reason == 'invalid_domain'){
         console.log('invalid email address: ' + req.body.my_email);
         console.log(response.body.reason);
-        app.get('/myapi', function(req, res){
-            res.send('invalid email address: ' + resultHolder),
-            location.reload(false);
-        });
-
-        
-            
-        
+        alert("invalid email address");
         
     }
 

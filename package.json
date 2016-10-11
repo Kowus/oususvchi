@@ -4,9 +4,11 @@
   "description": "oususvchi's server side validation",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "js-alert": "^1.0.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,7 +21,11 @@
     "svchi",
     "kowus",
     "joshua sakyi",
-    "barnabas"
+    "barnabas",
+    "life in a pixel",
+    "ousu svchi",
+    "photography",
+    "people of Ghana"
   ],
   "author": "Barnabas Nomo",
   "license": "ISC",
