@@ -38,6 +38,12 @@
                 margin-bottom:10px;
             }
         </style>
+        <script language="javascript" type="text/javascript" src="assets/js/libraries/p5.js"></script>
+        <!-- uncomment lines below to include extra p5 libraries -->
+        <!--<script language="javascript" src="assets/js/libraries/p5.dom.js"></script>-->
+        <!--<script language="javascript" src="assets/js/libraries/p5.sound.js"></script>-->
+        <script language="javascript" type="text/javascript" src="sketch.js"></script>
+        <!-- this line removes any default padding and style. you might only need one of these values set. -->
 
         <script>
            
@@ -94,16 +100,16 @@
             }
         </script>
     </head>
-    <body>
+    <body style="background-opacity: 0;" onload="draw()">
         <progress id="uploader"></progress>
-        
-        <p id="sts"></p>
+            
+        <p id="sts">Waiting For Upload</p>
         <input id="filebtn" type="file">
         <input id="title" type="text" placeholder="Title:">
         <input id="by" type="text" placeholder="By:">
-        
+            
         <button onclick="uploadfiles()" style="margin-top:1em" type="button">Upload</button>
         
-
+        
     </body>
 </html>
