@@ -4,7 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> 
 
-<html lang="en" class="no-js"> <!--<![endif]-->
+<html lang="en" class="no-js" ng-app="pagey"> <!--<![endif]-->
     <head>
         <title>Ousu Svchi</title>
         <link rel="icon" href="assets/images/ous.jpg">
@@ -16,7 +16,7 @@
         <!--<meta http-equiv="refresh" content="30">-->
         <meta name="description" content="Ousu Svchi">
         <meta name="keywords" content="Ousu,Svchi,Ousu Svchi,screensaver,photography,events,mentoring, Life In A Pixel">
-        <meta name="author" content="Barnabas Nomo,Kowus,WOEP">
+        <meta name="author" content="Barnabas Nomo,Kowus">
         <!-- stylesheets -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/font_icon/css/pe-icon-7-stroke.css">
@@ -30,6 +30,8 @@
         <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900,300italic,400italic,700italic,900italic|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
 
         <script src="assets/js/modernizr.js"></script>
+        <script type="text/javascript" src="assets/js/app/angular.min.js"></script>
+		<script type="text/javascript" src="assets/js/app/app.js"></script>
 
     </head>
     <body id="body">
@@ -80,125 +82,45 @@
 
         <!-- services section -->
 
-        <section id="services" class="service-area">
+        <section id="services" class="service-area" ng-controller="ServicesController as servi">
             <div class="container">
                 <h2 class="block_title">Services</h2>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
+                <div class="row" >
+                    <div class="col-md-3 col-sm-6" ng-repeat="serv in servi.service">
                         <div class="services">
                             <div class="service-wrap">   
-                                <i class="pe-7s-phone pe-dj pe-va"></i>
-                                <a href="ssaver.html" target="_blank" class="ouslinks">
-                                    <h3>Screensavers</h3>
-                                    <p>Give your phone's homescreen a cool feel! Use pictures from my weekly series as Wallpapers.</p>
+                                <i class="{{serv.icon}}"></i>
+                                <a href="{{serv.link}}" target="{{serv.target}}" class="ouslinks">
+                                    <h3>{{serv.head}}</h3>
+                                    <p>{{serv.content}}</p>
                                 </a>
                             </div>
-                        </div>
-                        
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="services">
-                            <div class="service-wrap">
-                                <i class="pe-7s-camera pe-dj pe-va"></i>
-                                <a href="peepo.html" target="_blank" class="ouslinks">
-                                    <h3>Photography</h3>
-                                    <p>Observe nature's diverse intricacies and beauty through my lens, and of course, your screens. </p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="services">
-                            <div class="service-wrap">
-                                <i class="pe-7s-note2 pe-dj pe-va"></i>
-                                <h3>Events &amp; Coverage</h3>
-                                <p>Be it weddings or graduations, outdoorings or leisurely picnics, I'm the go to guy, if you want to get going.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="services">
-                            <div class="service-wrap">
-                                <a href="#contact" class="ouslinks">
-                                <i class="pe-7s-config pe-dj pe-va"></i>
-                                <h3>Support</h3>
-                                <p>Are you an upcoming photographer? Do you need mentoring or tips to get started? Drop me a line!</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                        </div> 
+                    </div>                  
                 </div>
             </div>
         </section><!-- services -->
 
         <!-- Portfolio Area -->
 
-        <section id="portfolio" class="portfolio-area">
+        <section id="portfolio" class="portfolio-area" ng-controller="PortfolioController as port">
             <div class="container">
                 <h2 class="block_title">My Works</h2>
                 <div class="row port cs-style-3">
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
+                    <div class="col-md-5 col-sm-6 col-xs-12 item-space" ng-repeat="work in port.works">
+                        
                         <figure>
-                            <img src="assets/images/ousumbre2.jpg" alt="img02">
+                            <img ng-src="{{work.image}}" alt="{{work.name}}">
                             <figcaption>
-                                <h3>Screen Saver</h3>
-                                <span>Weekly Screensavers</span>
-                                <a href="ssaver.html" target="_blank" class="button" >Take a look</a>
+                                <h3>{{work.name}}</h3>
+                                <span>{{work.description}}</span>
+                                <a href="{{work.link}}" target="_blank" class="button" >Take a look</a>
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/portfolio2.jpg" alt="img01">
-                            <figcaption>
-                                <h3>People Of Ghana</h3>
-                                <span>Nomadic Photo Exploits</span>
-                                <a href="peepo.html" class="button" >Take a look</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/portfolio3.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" >Take a look</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/portfolio4.jpg" alt="img04">
-                            <figcaption>
-                                <h3>Settings</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" >Take a look</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/portfolio5.jpg" alt="img01">
-                            <figcaption>
-                                <h3>Camera</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" >Take a look</a>
-                            </figcaption> 
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/portfolio6.jpg" alt="img02">
-                            <figcaption>
-                                <h3>Music</h3>
-                                <span>Jacob Cummings</span>
-                                <a href="#" class="button" >Take a look</a>
-                            </figcaption>
-                        </figure>
-                    </div>
+                   
                     <div class="col-xs-12">
-                        <div class="btn-center"><a href="#" class="big button">View all</a></div>
+                        <div class="btn-center"><a href="#" class="big button" style="border: 0px;">   </a></div>
                     </div>
                 </div>
             </div><!-- container -->
@@ -206,33 +128,19 @@
 
         <!-- Testimonial Area -->
 
-        <section id="testimonial" class="testimonial-area">
+        <section id="testimonial" class="testimonial-area" ng-controller="TestimonialController as tescon">
             <div class="container">
                 <h2 class="block_title">Testimonials</h2>
                 <div class="row">
-                    <div class="col-xs-12">
-                    </div>
+                    <!--div class="col-xs-12">
+                    </div-->
                     <div id="testimonial-container" class="col-xs-12">
-                        <div class="testimonila-block">
-                            <img src="assets/images/testimonial.jpg" alt="clients" class="selfshot">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem sed mollitia illum! Molestiae dignissimos, hic dolorem et eius ut nobis. Corrupti totam amet aperiam aut voluptate nobis dolor at soluta.</p>
-                            <strong>Monir Hossain</strong>
+                        <div class="testimonila-block" ng-repeat="item in tescon.test">
+                            <img ng-src="{{item.pic}}" alt="clients" class="selfshot">
+                            <p>{{item.content}}</p>
+                            <strong>{{item.name}}</strong>
                             <br>
-                            <small>C.E.O</small>
-                        </div>
-                        <div class="testimonila-block">
-                            <img src="assets/images/testimonial2.jpg" alt="clients" class="selfshot">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem sed mollitia illum! Molestiae dignissimos, hic dolorem et eius ut nobis. Corrupti totam amet aperiam aut voluptate nobis dolor at soluta.</p>
-                            <strong>Nur Ul Hossain</strong>
-                            <br>
-                            <small>Project Manager</small>
-                        </div>
-                        <div class="testimonila-block">
-                            <img src="assets/images/testimonial3.jpg" alt="clients" class="selfshot">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem sed mollitia illum! Molestiae dignissimos, hic dolorem et eius ut nobis. Corrupti totam amet aperiam aut voluptate nobis dolor at soluta.</p>
-                            <strong>Hossain Abrar</strong>
-                            <br>
-                            <small>Developer</small>
+                            <small>{{item.title}}</small>
                         </div>
                     </div>
                 </div>
@@ -271,7 +179,7 @@
                                     <!--<li><i class="pe-7s-map-marker"></i><span>1600 Pennsylvania Ave NW,<br>Washington, DC 20500,<br>United States</span></li>-->
                                     <li><i class="pe-7s-mail"></i><span>oususvchi@gmail.com</span></li>
                                     <li><i class="pe-7s-phone"></i><span>+233-20-901-3742</span></li>
-                                    <li><i class="pe-7s-global"></i><span><a href="#">www.oususvchi.com</a></span></li>
+                                    <li><i class="pe-7s-global"></i><span><a href="#body">www.oususvchi.com</a></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -282,7 +190,7 @@
                                 <input type="text" name="name" class="form-control" required placeholder="Enter your name">
                               </div>
                               <div class="form-group">
-                                <input type="email" name="my_email" class="form-control" placeholder="Enter your email">
+                                <input type="email" name="my_email" class="form-control" required placeholder="Enter your email">
                                 <a name="contact"></a>
                               </div>
                               <div class="form-group">
@@ -320,10 +228,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <p class="copyright">© Copyright 2016 <a href="#" target="_blank">W O E P</a></p>
+                        <p class="copyright">© Copyright 2016 Ousu Svchi:<a href="#body" target="_blank"> Life In A Pixel</a></p>
                     </div>
                     <div class="col-sm-6"><i class=""></i>
-                        <p class="designed ousfooter">Ousu Svchi: <a href="#">Life In A Pixel</a></p>
+                        <p class="designed ousfooter">Designed by: <a href="http://www.kowus.xyz">Barnabas Nomo</a></p>
                     </div>
                 </div>
             </div>
