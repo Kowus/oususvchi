@@ -12,11 +12,17 @@
         this.service = services;
     });
 
-
     app.controller('TestimonialController', function () {
         this.test = testimonials;
-    })
+    });
 
+    app.controller('NavController', function () {
+        this.navs = navigationTabs;
+    });
+
+    app.controller('ProfileController', function () {
+        this.prof = profile;
+    });
 
 
 
@@ -36,6 +42,7 @@
                 image: 'assets/images/osu_castle.jpg'
             }
         ];
+
     var services =
         [
             {
@@ -70,7 +77,6 @@
 
         ];
 
-
     var testimonials =
         [
             {
@@ -99,4 +105,44 @@
             },
         ];
 
+    var navigationTabs =
+        [
+            {
+                name: 'Home',
+                class: 'pe-7s-home',
+                href: '#body',
+            },
+            {
+                name: 'Service',
+                class: 'pe-7s-config',
+                href: '#services',
+            },
+            {
+                name: 'Portfolio',
+                class: 'pe-7s-glasses',
+                href: '#portfolio',
+            },
+            {
+                name: 'Testimonials',
+                class: 'pe-7s-comment',
+                href: '#testimonial',
+            },
+            {
+                name: 'Contact',
+                class: 'pe-7s-help1',
+                href: '#contact'
+            }
+        ];
+
+    var profile =
+        {
+            about: "Creative, Fun, energetic, and dedicated photographer with 4 years in custom and specialized experience. Capturing moments, items, and actions, gives a great feeling of satisfaction to the photographic man inside. I'm conversant with a few types of photography; Wedding, Nature, Architectural, product and design advertising. Vest with advanced photography tools and equipment.",
+            background: [
+                {
+                    head: 'KNUST 2006-2010',
+                    cont: 'B.A. Communication Design'
+                }
+            ]
+
+        }
 })();

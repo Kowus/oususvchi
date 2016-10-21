@@ -30,6 +30,8 @@
         <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900,300italic,400italic,700italic,900italic|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
 
         <script src="assets/js/modernizr.js"></script>
+
+        <!--  angular js -->
         <script type="text/javascript" src="assets/js/app/angular.min.js"></script>
 		<script type="text/javascript" src="assets/js/app/app.js"></script>
 
@@ -52,7 +54,7 @@
         </header>
 
         <!-- Navigation area -->
-        <section id="navigation">
+        <section id="navigation" ng-controller="NavController as navctrl">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-6">
@@ -64,11 +66,8 @@
                              <div class="dropdown-menu">
                                  <div class="arrow-up"></div>
                                  <ul>
-                                     <li><a data-scroll href="#body">Home <i class="pe-7s-home"></i></a><span class="menu-effect"></span></li>
-                                     <li><a data-scroll href="#services">Service <i class="pe-7s-config"></i></a><span class="menu-effect"></span></li>
-                                     <li><a data-scroll href="#portfolio">Portfolio <i class="pe-7s-glasses"></i></a><span class="menu-effect"></span></li>
-                                     <li><a data-scroll href="#testimonial">Testimonial <i class="pe-7s-comment"></i><span class="menu-effect"></span></a></li>
-                                     <li><a data-scroll href="#contact">Contact <i class="pe-7s-help1"></i></a><span class="menu-effect"></span></li>
+                                     <!-- angular array for nav-->
+                                     <li ng-repeat="nav in navctrl.navs"><a data-scroll href="{{nav.href}}">{{nav.name}}<i class="{{nav.class}}"></i></a><span class="menu-effect"></span></li>
                                  </ul>
                              </div>
                         </div>
@@ -105,7 +104,7 @@
 
         <section id="portfolio" class="portfolio-area" ng-controller="PortfolioController as port">
             <div class="container">
-                <h2 class="block_title">My Works</h2>
+                <h2 class="block_title">Portfolio</h2>
                 <div class="row port cs-style-3">
                     <div class="col-md-5 col-sm-6 col-xs-12 item-space" ng-repeat="work in port.works">
                         
@@ -149,7 +148,7 @@
 
         <!-- Contact Area -->
 
-        <section id="contact" class="mapWrap">
+        <section id="contact" class="mapWrap" ng-controller="ProfileController as proctrl">
             <div id="googleMap" style="width:100%;"></div>
             <div id="contact-area">
                 <div class="container">
@@ -160,21 +159,14 @@
                         <div class="col-sm-6">
                             <div class="moreDetails">
                                 <h2 class="con-title">Profile</h2>
-                                <p> 
-                                    Creative, Fun, energetic, and 
-                                    dedicated photographer with 4 
-                                    years in custom and specialized experience.
-                                    Capturing moments, items, and actions, gives a great
-                                    feeling of satisfaction to the photographic man inside.
-                                    <br>I'm conversant with a few types of photography; Wedding, Nature,
-                                    Architectural, product and design advertising. 
-                                    <br>Vest with advanced photography tools and equipment.<br>
+                                <p>{{proctrl.prof.about}}<br></p>
+                                    <div><p>
                                     <br><span style="color: violet; font-size: 1.2em; font-weight: bold;">Background</span><br>
                                     <br><span style="font-style: italic; font-weight: bold;">KNUST 2006 - 2010</span><br>
                                     <span style="font-style: italic; margin-left: 10px; font-size: 0.8em;">B.A. Communication Design</span><br>
                                     <br><span style="font-style: italic; font-weight: bold;">GTUC 2016</span><br>
                                     <span style="font-style: italic; margin-left: 10px; font-size: 0.8em;">Google Adwords</span><br>
-                                </p>
+                                </p></div>
                                 <ul class="address">
                                     <!--<li><i class="pe-7s-map-marker"></i><span>1600 Pennsylvania Ave NW,<br>Washington, DC 20500,<br>United States</span></li>-->
                                     <li><i class="pe-7s-mail"></i><span>oususvchi@gmail.com</span></li>
