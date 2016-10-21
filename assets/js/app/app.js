@@ -141,6 +141,10 @@
                 {
                     head: 'KNUST 2006-2010',
                     cont: 'B.A. Communication Design'
+                },
+                {
+                    head: 'GTUC 2016',
+                    cont: 'Google Adwords'
                 }
             ]
 
