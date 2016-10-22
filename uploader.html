@@ -40,26 +40,60 @@
 			}
 		</style>
 
-
 		<script>
+           
+          
+
+            var uploadfiles = function(){
+                var title = document.getElementById("title").value;
+                var by = document.getElementById("by").value;
+
+                var uploader = document.getElementById("uploader")
+                var filebtn = document.getElementById("filebtn")
+
+                
+                var file = document.getElementById("filebtn").files[0]
+
+                var storageRef = app.storage().ref('images/'+file.name);
+
+                var task = storageRef.put(file);
+
+                task.on('state_changed',
+
+                    function progress(snapshot){
+                        var perc = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+                        uploader.value=perc;
+                    },
+
+                    function error(err){
+                        alert('error while uploading')
+                    },
+                    function success(){
+                        var title = document.getElementById("title").value;
+                        var by = document.getElementById("by").value;
+                        // console.log(task)
+                        // console.log(by)
+                        var newPostKey = app.database().ref().child('posts').push().key
+                        app.database().ref("posts/"+newPostKey).set(
+                            {
+                                'title':title,
+                                'by':by,
+                                'img': task.snapshot.downloadURL
+                            }
+                        )
+                    }
+
+                )
 
 
 
-		var uploadfiles = function(){ var title = document.getElementById("title").value; var by = document.getElementById("by").value;
-		var uploader = document.getElementById("uploader") var filebtn = document.getElementById("filebtn") var file = document.getElementById("filebtn").files[0]
-		var storageRef = app.storage().ref('images/'+file.name); var task = storageRef.put(file); task.on('state_changed', function
-		progress(snapshot){ var perc = (snapshot.bytesTransferred/snapshot.totalBytes)*100; uploader.value=perc; }, function error(err){
-		alert('error while uploading') }, function success(){ var title = document.getElementById("title").value; var by = document.getElementById("by").value;
-		// console.log(task) // console.log(by) var newPostKey = app.database().ref().child('posts').push().key app.database().ref("posts/"+newPostKey).set(
-		{ 'title':title, 'by':by, 'img': task.snapshot.downloadURL } ) var sts = document.getElementById('sts'); sts.innerHTML
-		= "Successful!"; setTimeout(function(){ sts.innerHTML = "Waiting For another Upload"; }, 10000); } ) }
-		</script>
+            }
+        </script>
 	</head>
 
 	<body>
 		<progress id="uploader"></progress>
 
-		<p id="sts">Waiting For Upload</p>
 		<input id="filebtn" type="file">
 		<input id="title" type="text" placeholder="Title:">
 		<input id="by" type="text" placeholder="By:">

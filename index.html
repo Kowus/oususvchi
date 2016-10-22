@@ -162,9 +162,9 @@
                                 <p>{{proctrl.prof.about}}<br></p>
                                     
                                     <br><span style="color: violet; font-size: 1.2em; font-weight: bold;">Background</span><br>
-                                    <div><p>
-                                    <br><span style="font-style: italic; font-weight: bold;">KNUST 2006 - 2010</span><br>
-                                    <span style="font-style: italic; margin-left: 10px; font-size: 0.8em;">B.A. Communication Design</span><br>
+                                    <div ng-repeat="pro in proctrl.prof.background"><p>
+                                    <br><span style="font-style: italic; font-weight: bold;">{{pro.head}}</span><br>
+                                    <span style="font-style: italic; margin-left: 10px; font-size: 0.8em;">{{pro.cont}}</span><br>
                                 </p></div>
                                 <ul class="address">
                                     <!--<li><i class="pe-7s-map-marker"></i><span>1600 Pennsylvania Ave NW,<br>Washington, DC 20500,<br>United States</span></li>-->
