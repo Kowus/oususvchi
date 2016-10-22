@@ -24,7 +24,15 @@
         this.prof = profile;
     });
 
-
+    app.controller('PanelController', function () {
+        this.tab = 0;
+        this.selectTab = function (setTab) {
+            this.tab = setTab;
+        };
+        this.isSelected = function (checkTab) {
+            return this.tab == checkTab;
+        };
+    })
 
 
     var portfolio =
@@ -33,13 +41,15 @@
                 name: 'Screensavers',
                 description: 'For Mobile Screens',
                 link: 'ssaver.html',
-                image: 'assets/images/ousumbre2.jpg'
+                image: 'assets/images/ousumbre2.jpg',
+                index: 1
             },
             {
                 name: 'People of Ghana',
                 description: 'Story Album of Random People and Events',
                 link: 'peepo.html',
-                image: 'assets/images/osu_castle.jpg'
+                image: 'assets/images/osu_castle.jpg',
+                index: 2
             }
         ];
 

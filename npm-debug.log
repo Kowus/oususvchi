@@ -1,19 +1,49 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'whoami' ]
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'adduser' ]
 2 info using npm@3.5.2
 3 info using node@v4.2.6
-4 verbose stack Error: this command requires you to be logged in.
-4 verbose stack     at EventEmitter.whoami (/usr/share/npm/lib/whoami.js:41:18)
-4 verbose stack     at Object.commandCache.(anonymous function) (/usr/share/npm/lib/npm.js:216:13)
-4 verbose stack     at EventEmitter.<anonymous> (/usr/share/npm/bin/npm-cli.js:74:30)
-4 verbose stack     at nextTickCallbackWith0Args (node.js:419:9)
-4 verbose stack     at process._tickCallback (node.js:348:13)
-5 verbose cwd /home/kowus/Documents/DevTools/Personal/ousu-svchi
-6 error Linux 4.4.0-43-generic
-7 error argv "/usr/bin/nodejs" "/usr/bin/npm" "whoami"
-8 error node v4.2.6
-9 error npm  v3.5.2
-10 error code ENEEDAUTH
-11 error need auth this command requires you to be logged in.
-12 error need auth You need to authorize this machine using `npm adduser`
-13 verbose exit [ 1, true ]
+4 warn Username must be lowercase
+5 verbose adduser before first PUT { _id: 'org.couchdb.user:kowus',
+5 verbose adduser   name: 'kowus',
+5 verbose adduser   password: 'XXXXX',
+5 verbose adduser   email: 'barnabas@elite-education.org',
+5 verbose adduser   type: 'user',
+5 verbose adduser   roles: [],
+5 verbose adduser   date: '2016-10-22T08:10:37.991Z' }
+6 verbose request uri https://registry.npmjs.org/-/user/org.couchdb.user:kowus
+7 verbose request new user, so can't send auth
+8 info attempt registry request try #1 at 8:10:38 AM
+9 verbose request id 868d5121f2bec041
+10 http request PUT https://registry.npmjs.org/-/user/org.couchdb.user:kowus
+11 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+12 info attempt registry request try #2 at 8:10:53 AM
+13 http request PUT https://registry.npmjs.org/-/user/org.couchdb.user:kowus
+14 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+15 info attempt registry request try #3 at 8:11:53 AM
+16 http request PUT https://registry.npmjs.org/-/user/org.couchdb.user:kowus
+17 verbose request invalidating /home/kowus/.npm/registry.npmjs.org/-/user/org.couchdb.user_3Akowus on PUT
+18 verbose adduser back [ { [Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443]
+18 verbose adduser     code: 'EAI_AGAIN',
+18 verbose adduser     errno: 'EAI_AGAIN',
+18 verbose adduser     syscall: 'getaddrinfo',
+18 verbose adduser     hostname: 'registry.npmjs.org',
+18 verbose adduser     host: 'registry.npmjs.org',
+18 verbose adduser     port: 443 },
+18 verbose adduser   undefined,
+18 verbose adduser   undefined ]
+19 verbose stack Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+19 verbose stack     at Object.exports._errnoException (util.js:870:11)
+19 verbose stack     at errnoException (dns.js:31:15)
+19 verbose stack     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:77:26)
+20 verbose cwd /home/kowus/Documents/DevTools/Personal/ousu-svchi
+21 error Linux 4.4.0-45-generic
+22 error argv "/usr/bin/nodejs" "/usr/bin/npm" "adduser"
+23 error node v4.2.6
+24 error npm  v3.5.2
+25 error code EAI_AGAIN
+26 error errno EAI_AGAIN
+27 error syscall getaddrinfo
+28 error getaddrinfo EAI_AGAIN registry.npmjs.org:443
+29 error If you need help, you may report this error at:
+29 error     <https://github.com/npm/npm/issues>
+30 verbose exit [ 1, true ]
