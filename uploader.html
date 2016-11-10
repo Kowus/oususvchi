@@ -1,10 +1,11 @@
 <html>
-    <head>
+
+	<head>
 
 
-<script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
 
-        <script>
+		<script>
                //configuring
             var config = {
                 apiKey: "AIzaSyDteNE0JKZ0ei8YckaIXHIuK-s3FpdYkvU",
@@ -19,27 +20,27 @@
 
         </script>
 
-        <style>
-            body{
-                display:flex;
-                min-height:100vh;
-                width:100%;
-                padding:0;
-                margin:0;
-                align-items:center;
-                justify-content:center;
-                flex-direction:column;
-            }
+		<style>
+			body {
+				display: flex;
+				min-height: 100vh;
+				width: 100%;
+				padding: 0;
+				margin: 0;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
+			
+			progress {
+				-webkit-appearance: none;
+				appearance: none;
+				width: 50%;
+				margin-bottom: 10px;
+			}
+		</style>
 
-            progress{
-                -webkit-appearance:none;
-                appearance:none;
-                width:50%;
-                margin-bottom:10px;
-            }
-        </style>
-
-        <script>
+		<script>
            
           
 
@@ -80,11 +81,6 @@
                                 'img': task.snapshot.downloadURL
                             }
                         )
-                        var sts =  document.getElementById('sts');
-                        sts.innerHTML = "Successful!";
-                        setTimeout(function(){
-                            sts.innerHTML = "Waiting For another Upload";
-                        }, 10000);
                     }
 
                 )
@@ -93,17 +89,18 @@
 
             }
         </script>
-    </head>
-    <body>
-        <progress id="uploader"></progress>
-        
-        <p id="sts"></p>
-        <input id="filebtn" type="file">
-        <input id="title" type="text" placeholder="Title:">
-        <input id="by" type="text" placeholder="By:">
-        
-        <button onclick="uploadfiles()" style="margin-top:1em" type="button">Upload</button>
-        
+	</head>
 
-    </body>
+	<body>
+		<progress id="uploader"></progress>
+
+		<input id="filebtn" type="file">
+		<input id="title" type="text" placeholder="Title:">
+		<input id="by" type="text" placeholder="By:">
+
+		<button onclick="uploadfiles()" style="margin-top:1em" type="button">Upload</button>
+
+
+	</body>
+
 </html>

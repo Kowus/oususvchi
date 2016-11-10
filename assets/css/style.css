@@ -313,12 +313,12 @@ header{
 }
 
 .port figcaption span:before {
-	content: 'by ';
+	/* nothing yet*/
 }
 
 .port figcaption a {
 	text-align: center;
-	padding: 8px 15px;
+	padding: 3px 3px;
 	display: inline-block;
 	color: #fff;
 }
